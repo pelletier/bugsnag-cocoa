@@ -190,7 +190,9 @@ catch(TYPE value)\
         kscrashsentry_resumeThreads();
     }
 
-    g_originalTerminateHandler();
+    if (g_originalTerminateHandler != NULL) {
+        g_originalTerminateHandler();
+    }
 }
 
 
